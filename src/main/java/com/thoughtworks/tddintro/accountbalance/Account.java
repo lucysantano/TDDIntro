@@ -5,14 +5,25 @@ package com.thoughtworks.tddintro.accountbalance;
  */
 public class Account {
 
-    public static void setStartingBalance(int amount){
+    private int balance;
 
+    public void setStartingBalance(int amount){
+        balance = amount;
     }
 
     public void deposit(int i) {
+        balance+=i;
     }
 
-    public int balance() {
-        return 150;
+    public void withdraw(int i) {
+        if(i<balance) {
+            balance -= i;
+        }
     }
+
+    public int getBalance() {
+        return balance;
+    }
+
+
 }
