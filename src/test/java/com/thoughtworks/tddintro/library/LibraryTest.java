@@ -55,6 +55,14 @@ public class LibraryTest {
     public void shouldPrintBothBookTitlesWhenThereAreTwoBooks() {
 
         // implement me
+        books.add("Book One");
+        books.add("Book Two");
+
+        library = new Library(books, printStream, null);
+        library.listBooks();
+
+        verify(printStream).println("Book One");
+        verify(printStream).println("Book Two");
     }
 
     /*
@@ -102,5 +110,6 @@ public class LibraryTest {
 
         // implement me
         // then move common test variables into a setup method
+
     }
 }
